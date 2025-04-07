@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ben Chesser</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,9 +12,10 @@
       <header>
         <h1 class="site-name">Ben Chesser</h1>
         <nav class="nav-bar">
-          <a href="#about">About</a>
+          <a class="selected">Home</a>
           <a href="#archive">Archive</a>
-          <a href="#gallery">Gallery</a>
+          <a href="./gallery/gallery.html">Gallery</a>
+          <a href="./settings/settings.html">Settings</a>
         </nav>
       </header>
   
@@ -32,7 +34,7 @@
             <h2>Blog</h2>
             <p>Really, the point of this website is that I liked the idea of starting a blog. None of it is generative AI, I promise. As I write, I'll post and update here:</p>
             <ul>
-                <li><a href="blogs/genAI.html">Generative Artificial Intelligence and Creative Fulfillment</a></li>
+                <li><a href="blogs/genAI.html">Generative Artificial Intelligence and Creative Fulfillment in CS - <i>4/1/25</i></a></li>
             </ul>
         </section>
 
@@ -56,5 +58,9 @@
         <p>&copy; 2025 Ben Chesser</p>
       </footer>
     </div>
+
+  <!-- Dark mode script -->
+  <script src="./settings/darkmode.js"></script>
+
   </body>
 </html>

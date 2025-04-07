@@ -43,7 +43,15 @@ html, body {
     content: " •";
     margin-left: 0.3em;
     pointer-events: none; /* Makes the dot unclickable */
-    color: black;         /* Forces the dot to be black */
+    color: gray;         /* Forces the dot to be black */
+    display: inline-block; /* Breaks it out of the inline text decoration flow */
+    text-decoration: none; /* Ensure no underline is applied */
+  }
+
+  .selected {
+    content: " •";
+    pointer-events: none; /* Makes the dot unclickable */
+    color: gray;         /* Forces the dot to be black */
     display: inline-block; /* Breaks it out of the inline text decoration flow */
     text-decoration: none; /* Ensure no underline is applied */
   }
@@ -129,6 +137,98 @@ html, body {
   .poem {
     margin-bottom: 2.5rem;
   }
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1f1f1f;
+  color: #eee !important;
+}
+
+.dark-mode nav a {
+  color: #bbb;
+}
+
+/* Optionally, override other elements as needed */
+.dark-mode header,
+.dark-mode footer,
+.dark-mode .container {
+  background-color: #1f1f1f;
+}
+
+/* Dark mode hyperlink styling */
+.dark-mode a:link {
+  color: #66bfff;  /* Color for unvisited links */
+}
+
+.dark-mode a:visited {
+  color: #bb99ff;  /* Color for visited links */
+}
+
+/* Optional: Hover and active states */
+.dark-mode a:hover {
+  color: #99ddff;
+}
+
+.dark-mode a:active {
+  color: #88ccff;
+}
+
+/* Container for the toggle switch */
+.toggle-container {
+  display: inline-block;
+  position: relative;
+}
+
+/* Hide the default checkbox */
+.toggle-container input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The custom toggle label (the switch background) */
+.toggle-label {
+  display: block;
+  cursor: pointer;
+  width: 30px;       /* half of the original 60px */
+  height: 17px;      /* half of the original 34px */
+  background-color: #ccc;
+  border-radius: 17px;  /* full rounding using half the height */
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* The switch handle */
+.toggle-label .toggle-switch {
+  position: absolute;
+  top: 1px;          /* half of the original 2px */
+  left: 1px;         /* half of the original 2px */
+  width: 15px;       /* half of the original 30px */
+  height: 15px;      /* half of the original 30px */
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-container {
+  padding-bottom: 1.4rem;
+}
+
+/* Change background when checked */
+.toggle-container input[type="checkbox"]:checked + .toggle-label {
+  background-color: #66bb6a;
+}
+
+/* Move the switch handle when checked */
+.toggle-container input[type="checkbox"]:checked + .toggle-label .toggle-switch {
+  transform: translateX(13px); /* half of the original 26px */
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust spacing between text and toggle as needed */
+}
 
   /* @media (prefers-color-scheme: dark) {
     body {
