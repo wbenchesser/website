@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Apply dark mode if the current mode is enabled.
   if (currentMode === 'enabled') {
-    document.documentElement.classList.add('dark-mode'); // <html>
+    document.documentElement.classList.add('dark-mode');
     document.body.classList.add('dark-mode');
   }
 
@@ -20,9 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleSwitch.checked = currentMode === 'enabled';
     toggleSwitch.addEventListener('change', function () {
       if (toggleSwitch.checked) {
+        document.documentElement.classList.add('dark-mode');
         document.body.classList.add('dark-mode');
         localStorage.setItem('darkMode', 'enabled');
       } else {
+        document.documentElement.classList.remove('dark-mode');
         document.body.classList.remove('dark-mode');
         localStorage.setItem('darkMode', 'disabled');
       }
